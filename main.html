@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGMA</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        position: fixed;
+        background-color: rgb(107, 112, 107);
+    }
+
+    .taskbar {
+        width: 95.625rem;
+        border: 2px solid rgb(39, 37, 37);
+        height: 1.875rem;
+        background-color: rgb(39, 37, 37);
+        bottom: 0px;
+    }
+
+
+    .ag {
+        top: 37.1875rem;
+        position: absolute;
+        left: 48.125rem;
+    }
+
+    .email {
+        position: absolute;
+        top: 37.1875rem;
+        left: 25.625rem;
+    }
+
+    .texted {
+        position: absolute;
+        top: 37.1875rem;
+        left: 28.125rem;
+    }
+
+    .paint {
+        position: absolute;
+        top: 37.1875rem;
+        left: 30.625rem;
+    }
+
+    .notes {
+        position: absolute;
+        border: 2px solid rgb(214, 161, 61);
+        width: 11.625rem;
+        height: 9.375rem;
+        background-color: rgb(214, 161, 61);
+        left: 73.125rem;
+        top: 0px;
+    }
+
+    .command {
+        position: absolute;
+        top: 37.1875rem;
+        left: 33.125rem;
+    }
+
+    .calculate {
+        position: absolute;
+        top: 37.1875rem;
+        left: 35.625rem;
+    }
+
+    .txt {
+        position: absolute;
+        top: 37.1875rem;
+        left: 38.125rem;
+    }
+
+    .problems {
+        position: absolute;
+        top: 37.5rem;
+        left: 40.625rem;
+    }
+
+    .setting {
+        position: absolute;
+        top: 37.5rem;
+        left: 43.125rem;
+    }
+    .ide{
+        position: absolute;
+        top: 37.1875rem;
+        left: 45.625rem;
+    }
+
+    .wallpaper {
+        display: block;
+        margin: auto;
+    }
+
+    #btn1 {
+        position: absolute;
+        width: 3.125rem;
+        left: 0.625rem;
+        background-color: skyblue;
+    }
+
+    #btn2 {
+        position: absolute;
+        width: 3.125rem;
+        left: 3.75rem;
+        background-color: rgb(93, 188, 226);
+    }
+
+    #btn3 {
+        position: absolute;
+        width: 3.125rem;
+        left: 6.875rem;
+        background-color: rgb(49, 180, 231);
+    }
+
+    .op {
+        position: absolute;
+        top: 37.1875rem;
+        left: 0.625rem;
+        z-index: 1;
+        border-radius: 0.1875rem;
+        cursor: pointer;
+    }
+
+    .popw {
+        position: absolute;
+        border: 2px solid black;
+        bottom: -580px;
+        left: 0.625rem;
+        border-radius: 0.3125rem;
+        background-color: rgb(170, 166, 166);
+        opacity: 0.7;
+        filter: opacity(opacity=50);
+        z-index: 0;
+        width: 250px;
+        height: 300px;
+        transition: all 0.35s ease-in;
+    }
+
+    #go {
+        border-radius: 1.875rem;
+        border: 2px solid black;
+    }
+
+    #button {
+        background-color: aqua;
+        border: 0px solid black;
+        height: 1.875rem;
+        border-radius: 1.875rem;
+        cursor: pointer;
+    }
+    .i2{
+        position: absolute;
+        top: 1.8125rem;
+    }
+    .i3{
+        position: absolute;
+        top: 4.1875rem;
+    }
+    .i4{
+        position: absolute;
+        top: 5.937rem;
+    }
+    .i5{
+        position: absolute;
+        top: 7.6875rem;
+    }
+    .ai{
+        border: 2px solid black;
+        width: 15.4375rem;
+        position: absolute;
+        top: 9.375rem;
+    }
+    .user{
+        top: 9.625rem;
+        position: absolute;
+    }
+    .nony{
+        top: 10rem;
+        position: absolute;
+        left: 3.125rem;
+    }
+    .shutd{
+        position: absolute;
+        top: 13.125rem;
+    }
+    .shp{
+        position: absolute;
+        top: 13.125rem;
+        left: 1.875rem;
+    }
+    .news{
+        position: absolute;
+        top: 15.625rem;
+        left: 1.25rem;
+    }
+    .reli{
+        position: absolute;
+        top: 1.875rem;
+        left: 1.25rem;
+        cursor: pointer;
+    }
+    .hl{
+        position: absolute;
+        top: 4.375rem;
+        left: 0.0625rem;
+        cursor: pointer;
+    }
+    .hl a{
+        color: rgb(69, 199, 216);
+        text-decoration: none;
+    }
+    .hl a:hover{
+        color: red;
+    }
+    #file{
+        position: absolute;
+        top: 37.2875rem;
+        left: 1270px;
+        cursor: pointer;
+    }
+    #popf{
+        position: absolute;
+        border: 2px solid black;
+        bottom: -580px;
+        left: 1080px;
+        border-radius: 0px;
+        background-color: rgb(170, 166, 166);
+        opacity: 0.7;
+        filter: opacity(opacity=50);
+        z-index: 0;
+        display: none;
+        width: 280px;
+        height: 570px;
+        transition: all 0.35s ease-in;
+    }
+    .not1{
+        position: absolute;
+        top: 20px;
+    }
+    .not2{
+        position: absolute;
+        top: 135px;
+    }
+    .not3{
+        position: absolute;
+        top: 250px;
+    }
+    .not1 img:hover{
+        border: 2px solid grey;
+    }
+    .not3 img:hover{
+        border: 2px solid grey;
+    }
+    .not2 img:hover{
+        border: 2px solid grey;
+    }
+    .line{
+        position: absolute;
+        top: 365px;
+        border: 2px solid black;
+        width: 278px;
+    }
+
+</style>
+
+<body>
+    <div class="wallpaper">
+        <img src="img/pexels-pixabay-258109.jpg" width="1530px">
+    </div>
+    <div class="taskbar">
+    </div>
+    <div class="op">
+        <img src="img/op.png" width="25px">
+    </div>
+    <div class="ag">
+        <a href="https://www.google.com/"><img src="img/logo.png" width="25px"></a>
+    </div>
+    <div class="email">
+        <a href="https://mail.google.com/mail/u/0/#inbox"><img src="img/email.png" width="25px"></a>
+    </div>
+    <div class="texted">
+        <a href="word.html"><img src="img/textedit.png" width="25px" height="25px"></a>
+    </div>
+    <div class="paint">
+        <a href="paint.html"><img src="img/paint.png" width="25px"></a>
+    </div>
+    <div class="command">
+        <a href="cmd.bat"><img src="img/commandcompest.png" width="30px"></a>
+    </div>
+    <div class="calculate">
+        <a href="calc.py"><img src="img/calculator.png" width="25px"></a>
+    </div>
+    <div class="txt">
+        <a href="welcome.txt"><img src="img/txt.png" width="25px"></a>
+    </div>
+    <div class="problems">
+        <a href="problem.html"><img src="img/problems.png" width="25px"></a>
+    </div>
+    <div class="setting">
+        <a href="jarvis.html"><img src="img/settings.png" width="25px"></a>
+    </div>
+    <div class="ide">
+        <a href="ide.html"><img src="img/ide.png" width="25px"></a>
+    </div>
+    <div class="walc">
+        <button id="btn1">WALL1</button>
+        <button id="btn2">WALL2</button>
+        <button id="btn3">WALL3</button>
+    </div>
+    <div class="reli">
+        <a href="readme.txt"><img src="img/readme.png" width="55px" style="border-radius: 7px;"></a>
+        <div class="hl">
+            <a href="readme.txt"><p>README.license</p></a>
+        </div>
+    </div>
+    <div class="notes" contenteditable="true">
+        <pre>Write your notes here note
+            
+           
+                   
+              
+                  
+
+
+            
+        </pre>
+    </div>
+    <div class="popw">
+
+        <div class="i1">
+            <a href="https://www.google.com/"><img src="img/logo.png" width="30px"></a>
+            <p style="left: 45px; opacity: 0.2px; filter: opacity(opacity=50px);">Open Google</p>
+        </div>
+        <div class="i2">
+            <a href="word.html"><img src="img/textedit.png" width="30px"></a>
+            <p style="left: 45px; opacity: 0.2px; filter: opacity(opacity=50px);">Open Word Editor</p>
+        </div>
+        <div class="i3">
+            <a href="https://meet.google.com/getalink?hs=202&authuser=0&illm=1631452844266&hl=en-GB"><img src="img/email.png" width="30px"></a>
+            <p style="left: 45px; opacity: 0.2px; filter: opacity(opacity=50px);">Create An Gmail Meeting</p>
+        </div>
+        <div class="i4">
+            <a href="https://www.gmail.com/"><img src="img/email.png" width="30px"></a>
+            <p style="left: 45px; opacity: 0.2px; filter: opacity(opacity=50px);">Open Gmail</p>
+        </div>
+        <div class="i5">
+            <a href="paint.html"><img src="img/paint.png" width="30px"></a>
+            <p style="left: 45px; opacity: 0.2px; filter: opacity(opacity=50px);">Open Paint</p>
+        </div>
+        <div class="ai"></div>
+        <div class="user">
+            <img src="img/user.png" width="50px">
+        </div>
+        <div class="nony">
+            <p>Anonymous</p>
+        </div>
+        <div class="shutd">
+            <a href="shutdown.html"><img src="img/shutd.png" width="30px"></a>
+        </div>
+        <div class="shp">
+            <p>Shut Down</p>
+        </div>
+        <div class="news">
+            <a href="https://news.google.com/topstories?hl=en-IN&gl=IN&ceid=IN:en"><h2>Open Google News</h2></a>
+        </div>
+    </div>
+    <!----->
+    <div id="popf">
+        <p>Notifications</p>
+        <div class="not1">
+            <a href="releases.html"><img src="img/not1.png"></a>
+            <p style="left: 1180px; font-size: 14px;">Get AntiVirus For Your New Pc.</p>
+        </div>
+        <div class="not2">
+            <a href="app.html"><img src="img/not2.png"></a>
+            <p style="left: 1180px; font-size: 14px;">Get Apps To Set You Up.</p>
+        </div>
+        <div class="not3">
+            <a href="releases.html"><img src="img/not3.png"></a>
+            <p style="left: 1180px; font-size: 14px;">New Releases.</p>
+        </div>
+        <div class="line">
+
+        </div>
+    </div>
+
+    <div id="file" onclick="show_hide()">
+        <img src="img/fm.png" width="30px">
+    </div>
+    <!----->
+
+
+
+
+</body>
+<script>
+    console.log("Thanks For Purchasing❤❤❤❤❤")
+
+    let img = document.querySelector('img');
+    let btn1 = document.querySelector('#btn1');
+    let btn2 = document.querySelector('#btn2');
+    let btn3 = document.querySelector('#btn3');
+
+    btn1.addEventListener('click', () => {
+        img.src = 'img/pexels-pixabay-258109.jpg'
+    })
+
+    btn2.addEventListener('click', () => {
+        img.src = 'img/pexels-christian-heitz-842711.jpg'
+    })
+
+    btn3.addEventListener('click', () => {
+        img.src = 'img/pexels-pok-rie-2049422.jpg'
+    })
+    //end here'
+    let taskbar = document.getElementsByClassName("op")[0]
+    let start = document.getElementsByClassName("popw")[0]
+
+    taskbar.addEventListener("click", () => {
+        if (start.style.bottom == "-580px") {
+            start.style.bottom = "-1000px"
+        }
+        else {
+            start.style.bottom = "-580px"
+        }
+    })
+    var a;
+    function show_hide(){
+        if(a==1){
+            document.getElementById("popf").style.display="inline";
+            return a=0;
+        }
+
+        else{
+            document.getElementById("popf").style.display="none";
+            return a=1;
+        }
+    }
+
+</script>
+
+</html>
